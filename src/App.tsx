@@ -1,13 +1,15 @@
 // src/App.tsx
 
+import { Suspense } from "react";
 import "./App.css";
+import AppRouter from "./router";
 
 function App() {
   return (
     <>
-      <div className="text-2xl font-bold flex justify-center items-center p-8">
-        Welcome to React with Pages + Workers + D1 Example
-      </div>
+      <Suspense fallback={null}>
+        <AppRouter />
+      </Suspense>
     </>
   );
 }
