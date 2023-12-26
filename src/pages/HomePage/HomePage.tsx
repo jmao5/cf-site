@@ -18,6 +18,8 @@ import { MAX_WIDTH } from "@constants/width";
 const HomePage = () => {
   const { articles } = useArticlesQuery();
   const { channels } = useChannelsQuery();
+  console.log("channels : ", channels);
+
   const theme = useThemeStore((state) => state.theme);
   const [sortType, setSortType] = useState<"date" | "like">("date");
 

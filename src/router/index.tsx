@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import { PageTemplate } from "@components/templates/PageTemplate";
 
 import { PATH } from "@constants/index";
+import ErrorPage from "@pages/ErrorPage";
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,8 @@ const AppRouter = () => {
           }
         />
       </Route>
+      <Route path={PATH.ERROR} element={<ErrorPage />} />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 };

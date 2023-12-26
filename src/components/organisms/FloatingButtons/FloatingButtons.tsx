@@ -46,7 +46,7 @@ const FloatingButtons = ({ scrollPosition }: { scrollPosition: number }) => {
               fill:
                 theme.type === "LIGHT"
                   ? DARK_MODE_THEME.TEXT600
-                  : LIGHT_MODE_THEME.TEXT600
+                  : LIGHT_MODE_THEME.TEXT600,
             }}
             buttonValue={{
               background:
@@ -55,7 +55,7 @@ const FloatingButtons = ({ scrollPosition }: { scrollPosition: number }) => {
                   : LIGHT_MODE_THEME.BACKGROUND100,
               color: theme.TEXT300,
               children: "",
-              onClick: () => window.scrollTo({ top: 0, behavior: "smooth" })
+              onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
             }}
           />
         )}
@@ -67,7 +67,7 @@ const FloatingButtons = ({ scrollPosition }: { scrollPosition: number }) => {
               fill:
                 theme.type === "LIGHT"
                   ? DARK_MODE_THEME.TEXT600
-                  : LIGHT_MODE_THEME.TEXT600
+                  : LIGHT_MODE_THEME.TEXT600,
             }}
             buttonValue={{
               background:
@@ -78,7 +78,7 @@ const FloatingButtons = ({ scrollPosition }: { scrollPosition: number }) => {
               children: "",
               onClick: () => {
                 navigate("/create");
-              }
+              },
             }}
           />
         )}

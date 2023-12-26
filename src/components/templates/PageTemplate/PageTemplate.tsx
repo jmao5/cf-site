@@ -9,7 +9,7 @@ import { Sidebar } from "@components/organisms/Sidebar";
 import SidebarAppearButton from "@components/organisms/Sidebar/SidebarAppearButton";
 import {
   pageInnerWrapperStyle,
-  pageTemplateWrapperStyle
+  pageTemplateWrapperStyle,
 } from "@components/templates/PageTemplate/PageTemplate.styles";
 
 import { useSidebarContext } from "@hooks/contexts/useSidebarContext";

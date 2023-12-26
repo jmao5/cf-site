@@ -10,7 +10,7 @@ import {
   Game,
   Job,
   Question,
-  Security
+  Security,
 } from "@assets/svg";
 
 export const CHANNEL_MAP: {
@@ -18,50 +18,50 @@ export const CHANNEL_MAP: {
 } = {
   "650944f87378db52d101801e": {
     title: "질문/답변",
-    Svg: Question
+    Svg: Question,
   },
   "6509450a7378db52d1018028": {
     title: "자유",
-    Svg: Free
+    Svg: Free,
   },
   "650945497378db52d1018049": {
     title: "취업/이직",
-    Svg: Job
+    Svg: Job,
   },
   "6509455f7378db52d101804d": {
     title: "프론트엔드",
-    Svg: Front
+    Svg: Front,
   },
   "650945737378db52d1018053": {
     title: "백엔드",
-    Svg: Back
+    Svg: Back,
   },
   "650cf36acd60d7549331ae2b": {
     title: "게임",
-    Svg: Game
+    Svg: Game,
   },
   "650cf378cd60d7549331ae2f": {
     title: "데이터",
-    Svg: Data
+    Svg: Data,
   },
   "650cf382cd60d7549331ae41": {
     title: "AI",
-    Svg: AI
+    Svg: AI,
   },
   "650cf3ebcd60d7549331ae81": {
     title: "빅데이터",
-    Svg: BigData
+    Svg: BigData,
   },
   "650cf408cd60d7549331aeb7": {
     title: "DevOps",
-    Svg: DevOps
+    Svg: DevOps,
   },
   "650cf420cd60d7549331aebb": {
     title: "임베디드",
-    Svg: Embedded
+    Svg: Embedded,
   },
   "650cf440cd60d7549331aedb": {
     title: "보안",
-    Svg: Security
-  }
+    Svg: Security,
+  },
 };

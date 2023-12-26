@@ -23,7 +23,8 @@ const HomePageSkeleton = () => {
       css={css`
         margin: 20px 0;
         max-width: ${MAX_WIDTH.lg}px;
-      `}>
+      `}
+    >
       <Flex css={css``} gap={10}>
         <Text size={20} color={theme.PRIMARY} strong={true}>
           최신순
@@ -39,7 +40,8 @@ const HomePageSkeleton = () => {
           margin-top: 20px;
           margin-left: -36px;
           gap: 20px;
-        `}>
+        `}
+      >
         {channelValue.map(({ title }, index) => (
           <CardSliderSkeleton key={index} channelName={title} articles={[]} />
         ))}

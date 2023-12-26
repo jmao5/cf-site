@@ -6,11 +6,12 @@ import { CHANNEL_MAP } from "@constants/channel";
 
 export const getChannels = async () => {
   const { data } = await axiosInstance.get<Channels>("/channels", {
-    useAuth: false
+    useAuth: false,
   });
+  console.log("data : ", data);
 
   return data.map((channel) => ({
     ...channel,
-    name: CHANNEL_MAP[channel._id].title
+    name: CHANNEL_MAP[channel._id].title,
   }));
 };
