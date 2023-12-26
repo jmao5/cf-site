@@ -11,7 +11,7 @@ import {
   getSidebarIconText,
   getSidebarText,
   sidebarChannelLogin,
-  sidebarChannelLogout
+  sidebarChannelLogout,
 } from "./Sidebar.styles";
 
 type SidebarChannelsProps = {
@@ -28,10 +28,12 @@ const SidebarChannels = ({
   channelIconSize,
   channelTextSize,
   isLoggedIn,
-  myLocation
+  myLocation,
 }: SidebarChannelsProps) => {
   const channelColor = theme.TEXT300;
-  const channelList = [...useChannelsQuery().channels];
+  // const channelList = [...useChannelsQuery().channels];
+  const { channels: channelList } = useChannelsQuery();
+  console.log("channelList : ", channelList);
 
   return (
     <>
@@ -39,26 +41,27 @@ const SidebarChannels = ({
         CHANNELS
       </Text>
       <div css={isLoggedIn ? sidebarChannelLogin : sidebarChannelLogout}>
-        {channelList.map(({ name, _id }) => {
+        {channelList.map(({ id, channelName }) => {
           return (
             <IconText
-              key={_id}
+              key={id}
               iconValue={{
-                Svg: CHANNEL_MAP[_id].Svg,
+                // Svg: CHANNEL_MAP[id].Svg,
+                Svg: CHANNEL_MAP[channelName].Svg,
                 size: channelIconSize,
-                fill: channelColor
+                fill: channelColor,
               }}
               textValue={{
-                children: name,
+                children: channelName,
                 size: channelTextSize,
-                color: channelColor
+                color: channelColor,
               }}
               css={
-                myLocation.includes(_id)
+                myLocation.includes(id)
                   ? getSelectedSidebarIconText(theme)
                   : getSidebarIconText(theme)
               }
-              onClick={() => navigatePage("CHANNEL", _id)}
+              onClick={() => navigatePage("CHANNEL", id)}
             />
           );
         })}

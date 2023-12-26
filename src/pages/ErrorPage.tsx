@@ -27,7 +27,8 @@ const ErrorPage = () => {
         width: 100%;
         height: 100vh;
         background: ${theme.BACKGROUND200};
-      `}>
+      `}
+    >
       <Helmet key={location.pathname}>
         <title>404 not found</title>
       </Helmet>
@@ -39,10 +40,11 @@ const ErrorPage = () => {
           width: 320px;
           height: 428px;
           gap: 20px;
-        `}>
+        `}
+      >
         <IconText
           iconValue={{ Svg: Logo, size: 80, fill: theme.TEXT300 }}
-          textValue={{ children: "괴발개발", size: 48, color: theme.TEXT300 }}
+          textValue={{ children: "커뮤니티", size: 48, color: theme.TEXT300 }}
         />
         <Flex
           direction="column"
@@ -56,7 +58,8 @@ const ErrorPage = () => {
             height: 400px;
             border-radius: 8px;
             background-color: ${theme.BACKGROUND100};
-          `}>
+          `}
+        >
           <Icon Svg={NotFound} size={50} />
           <Text size={45} strong={true}>
             404
@@ -70,7 +73,8 @@ const ErrorPage = () => {
           <Button
             width="100%"
             height="35px"
-            onClick={() => navigate(PATH.HOME)}>
+            onClick={() => navigate(PATH.HOME)}
+          >
             홈으로
           </Button>
         </Flex>

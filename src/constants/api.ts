@@ -1,4 +1,5 @@
-export const BASE_URL = "https://kdt.frontend.4th.programmers.co.kr:5003";
+// export const BASE_URL = "https://kdt.frontend.4th.programmers.co.kr:5003";
+export const BASE_URL = "http://localhost:8080";
 export const PROXY_URL = "https://cors-anywhere.herokuapp.com/";
 
 export const DOMAIN = {
@@ -18,7 +19,7 @@ export const DOMAIN = {
   GET_ARTICLE: (articleId: string) => `/posts/${articleId}`,
   GET_ARTICLES: {
     BY_CHANNEL_ID: (channelId: string) => `/posts/channel/${channelId}`,
-    BY_USER_ID: (userId: string) => `/posts/author/${userId}`
+    BY_USER_ID: (userId: string) => `/posts/author/${userId}`,
   },
   CREATE_ARTICLE: "/posts/create",
   UPDATE_ARTICLE: "/posts/update",
@@ -31,11 +32,11 @@ export const DOMAIN = {
   READ_NOTIFICATION: "/notifications/seen",
   CREATE_NOTIFICATION: "/notifications/create",
   SEARCH_USER: (searchKeyword: string) => `/search/users/${searchKeyword}`,
-  SEARCH_ALL: (searchKeyword: string) => `/search/all/${searchKeyword}`
+  SEARCH_ALL: (searchKeyword: string) => `/search/all/${searchKeyword}`,
 } as const;
 
 export const NETWORK = {
-  TIMEOUT: 10000
+  TIMEOUT: 10000,
 } as const;
 
 export const ACCESS_TOKEN_KEY = "ACCESS_TOKEN";

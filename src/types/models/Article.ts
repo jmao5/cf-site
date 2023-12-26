@@ -26,11 +26,13 @@ export function articleTitleDataToArticleContent(
 export interface Article {
   likes: Like[];
   comments: Comment[];
-  _id: string;
+  id: string;
   image?: string;
   imagePublicId?: string;
   title: ArticleTitleData;
-  channel: Channel;
+  content: string;
+  tags: string;
+  channelId: Channel["id"];
   author: User;
   createdAt: string;
   updatedAt: string;

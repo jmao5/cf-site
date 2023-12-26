@@ -18,7 +18,6 @@ import { MAX_WIDTH } from "@constants/width";
 const HomePage = () => {
   const { articles } = useArticlesQuery();
   const { channels } = useChannelsQuery();
-  console.log("channels : ", channels);
 
   const theme = useThemeStore((state) => state.theme);
   const [sortType, setSortType] = useState<"date" | "like">("date");
@@ -70,10 +69,10 @@ const HomePage = () => {
       >
         {channels.map((channel) => (
           <ArticlesByChannelSlider
-            key={channel._id}
-            channelName={channel.name}
+            key={channel.id}
+            channelName={channel.channelName}
             articles={articles}
-            channelId={channel._id}
+            channelId={channel.id}
             sortType={sortType}
           />
         ))}

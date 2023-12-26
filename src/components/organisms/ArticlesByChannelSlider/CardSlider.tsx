@@ -42,12 +42,15 @@ const CardSlider = ({ articles }: { articles: Article[] }) => {
       index < currentPage * offset.current
   );
 
+  console.log("filteredArticles : ", filteredArticles);
+
   return (
     <Flex
       css={css`
         width: 100%;
         align-items: center;
-      `}>
+      `}
+    >
       <Icon
         size={36}
         css={css`

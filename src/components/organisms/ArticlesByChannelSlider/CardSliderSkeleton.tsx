@@ -17,7 +17,7 @@ import { getCardSliderStyle } from "./ArticlesByChannelSlider.style";
 
 const CardSliderSkeleton = ({
   articles,
-  channelName
+  channelName,
 }: {
   articles: Article[];
   channelName: string;
@@ -45,13 +45,15 @@ const CardSliderSkeleton = ({
       css={css`
         width: 100%;
         gap: 10px;
-      `}>
+      `}
+    >
       <Text
         css={css`
           margin-left: 36px;
         `}
         size={32}
-        strong={true}>
+        strong={true}
+      >
         {channelName}
       </Text>
       <Flex
@@ -59,7 +61,8 @@ const CardSliderSkeleton = ({
           margin-left: 36px;
           width: 100%;
           align-items: center;
-        `}>
+        `}
+      >
         <div css={getCardSliderStyle(offset.current)}>
           {Array(offset.current)
             .fill(null)

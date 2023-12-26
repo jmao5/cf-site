@@ -30,7 +30,7 @@ type CardProps = {
 const Card = ({ article, channelVisible = false }: CardProps) => {
   const { theme } = useThemeStore();
   const navigate = useNavigate();
-  const channelName = useChannelName(article.channel._id);
+  const channelName = useChannelName(article.channelId);
 
   return (
     <Flex css={getCardOuterStyle(theme)} direction="column" gap={4}>
@@ -39,11 +39,14 @@ const Card = ({ article, channelVisible = false }: CardProps) => {
         justify="space-between"
         css={css`
           width: 100%;
-        `}>
+        `}
+      >
         <UserInfo
           imgWidth={24}
-          imageSrc={article.author.image || placeholderUser}
-          username={article.author.fullName}
+          // imageSrc={article.author.image || placeholderUser}
+          // username={article.author.fullName}
+          imageSrc={placeholderUser}
+          username={"test"}
           fontSize={14}
           css={userInfoStyle}
           onClick={() => navigate(PATH.USER(article.author._id))}
@@ -56,7 +59,8 @@ const Card = ({ article, channelVisible = false }: CardProps) => {
               margin: 8px 12px 0 0;
               white-space: nowrap;
             `}
-            onClick={() => navigate(PATH.CHANNEL(article.channel._id))}>
+            onClick={() => navigate(PATH.CHANNEL(article.channelId))}
+          >
             {channelName}
           </Text>
         )}
@@ -68,7 +72,7 @@ const Card = ({ article, channelVisible = false }: CardProps) => {
           alt="contentImg"
           mode="cover"
           css={cardImgStyle}
-          onClick={() => navigate(PATH.ARTICLE(article._id))}
+          onClick={() => navigate(PATH.ARTICLE(article.id))}
         />
       ) : (
         <Flex
@@ -79,7 +83,8 @@ const Card = ({ article, channelVisible = false }: CardProps) => {
             aspect-ratio: 16 / 10;
             cursor: pointer;
           `}
-          onClick={() => navigate(PATH.ARTICLE(article._id))}>
+          onClick={() => navigate(PATH.ARTICLE(article.id))}
+        >
           <Icon Svg={NoImage} size={70} fill={theme.BACKGROUND300} />
         </Flex>
       )}

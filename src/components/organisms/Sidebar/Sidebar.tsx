@@ -82,7 +82,8 @@ const Sidebar = ({ outerWidth }: SidebarProps) => {
             flex-grow: 1;
             min-height: 300px;
             padding: 5px;
-          `}>
+          `}
+        >
           <SidebarMain
             theme={theme}
             navigatePage={navigatePage}

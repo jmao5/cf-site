@@ -22,13 +22,16 @@ const ArticlesByChannelSlider = ({
   articles,
   channelName,
   channelId,
-  sortType
+  sortType,
 }: ArticlesByChannelSliderProps) => {
   const navigate = useNavigate();
 
+  console.log("articles :  ", articles);
+
   const filteredArticles = articles.filter(
-    (article) => article.channel._id === channelId
+    (article) => article.channelId === channelId
   );
+
   if (sortType === "like") {
     const currentDate = new Date();
     const oneWeekAgo = new Date(
@@ -65,7 +68,8 @@ const ArticlesByChannelSlider = ({
       css={css`
         width: 100%;
         gap: 10px;
-      `}>
+      `}
+    >
       <Text
         css={css`
           margin-left: 36px;
@@ -73,10 +77,11 @@ const ArticlesByChannelSlider = ({
         `}
         onClick={() => navigate(PATH.CHANNEL(channelId))}
         size={32}
-        strong={true}>
+        strong={true}
+      >
         {channelName}
       </Text>
-      <CardSlider articles={filteredArticles}></CardSlider>
+      <CardSlider articles={filteredArticles} />
     </Flex>
   );
 };

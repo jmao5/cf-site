@@ -20,7 +20,7 @@ type SidebarFooterProps = {
 const SidebarFooter = ({
   theme,
   navigatePage,
-  isLoggedIn
+  isLoggedIn,
 }: SidebarFooterProps) => {
   const buttonWidth = "200px";
   const buttonHeight = "40px";
@@ -35,7 +35,8 @@ const SidebarFooter = ({
         <div
           css={css`
             margin-left: 26px;
-          `}>
+          `}
+        >
           {isLoggedIn ? (
             <>
               <Button
@@ -47,7 +48,8 @@ const SidebarFooter = ({
                   margin-bottom: 10px;
                   border: 1px solid var(--border-color);
                 `}
-                onClick={handleToggleModal}>
+                onClick={handleToggleModal}
+              >
                 로그아웃
               </Button>
               <Modal visible={isOpen}>
@@ -72,7 +74,8 @@ const SidebarFooter = ({
               css={css`
                 margin-bottom: 10px;
               `}
-              onClick={() => navigatePage("LOGIN")}>
+              onClick={() => navigatePage("LOGIN")}
+            >
               로그인
             </Button>
           )}

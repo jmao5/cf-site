@@ -10,8 +10,9 @@ export const getChannels = async () => {
   });
   console.log("data : ", data);
 
-  return data.map((channel) => ({
-    ...channel,
-    name: CHANNEL_MAP[channel._id].title,
-  }));
+  // return data.map((channel) => ({
+  //   ...channel,
+  //   name: CHANNEL_MAP[channel._id].title,
+  // }));
+  return data;
 };

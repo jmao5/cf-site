@@ -18,7 +18,7 @@ import {
   getSelectedUserInfoStyle,
   getSidebarIconText,
   getSidebarText,
-  getUserInfoStyle
+  getUserInfoStyle,
 } from "./Sidebar.styles";
 
 type SidebarMainProps = {
@@ -39,7 +39,7 @@ const SidebarMain = ({
   isLoggedIn,
   userImage,
   userId,
-  myLocation
+  myLocation,
 }: SidebarMainProps) => {
   const channelColor = theme.TEXT300;
   const { setSidebarAppear } = useSidebarContext();
@@ -54,12 +54,12 @@ const SidebarMain = ({
         iconValue={{
           Svg: Home,
           size: channelIconSize,
-          fill: channelColor
+          fill: channelColor,
         }}
         textValue={{
           children: "홈",
           size: channelTextSize,
-          color: channelColor
+          color: channelColor,
         }}
         css={
           myLocation === "/"
@@ -72,12 +72,12 @@ const SidebarMain = ({
         iconValue={{
           Svg: Search,
           size: channelIconSize,
-          fill: channelColor
+          fill: channelColor,
         }}
         textValue={{
           children: "검색",
           size: channelTextSize,
-          color: channelColor
+          color: channelColor,
         }}
         css={getSidebarIconText(theme)}
         onClick={() => setIsSearchModalOpen(true)}

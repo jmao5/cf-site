@@ -12,7 +12,7 @@ import { useThemeStore } from "@stores/theme.store";
 
 import {
   Article,
-  articleTitleDataToArticleContent
+  articleTitleDataToArticleContent,
 } from "@type/models/Article";
 
 import { PATH } from "@constants/index";
@@ -26,7 +26,7 @@ import {
   cardFoorterOuterStyle,
   contentStyle,
   tagsHeightStyle,
-  titleStyle
+  titleStyle,
 } from "./CardFooter.styles";
 
 type CardFooterProps = {
@@ -37,9 +37,7 @@ const CardFooter = ({ article }: CardFooterProps) => {
   const { theme } = useThemeStore();
   const navigate = useNavigate();
 
-  const { title, content, tags } = articleTitleDataToArticleContent(
-    article.title
-  );
+  const { title, content, tags } = article;
 
   return (
     <Flex direction="column" gap={8} css={cardFoorterOuterStyle}>
@@ -47,7 +45,8 @@ const CardFooter = ({ article }: CardFooterProps) => {
         direction="column"
         gap={8}
         css={cardDescriptionStyle}
-        onClick={() => navigate(PATH.ARTICLE(article._id))}>
+        onClick={() => navigate(PATH.ARTICLE(article.id))}
+      >
         <Text size={16} strong={true} css={titleStyle}>
           {title}
         </Text>
@@ -56,15 +55,16 @@ const CardFooter = ({ article }: CardFooterProps) => {
         </Text>
       </Flex>
 
-      {tags.length === 0 ? (
+      {/* {tags.length === 0 ? (
         <div css={tagsHeightStyle}></div>
       ) : (
         <Tags tags={tags} />
-      )}
+      )} */}
 
       <Text
         size={12}
-        color={theme.type === "DARK" ? theme.TEXT100 : theme.TEXT300}>
+        color={theme.type === "DARK" ? theme.TEXT100 : theme.TEXT300}
+      >
         {createdAtToString(new Date(article.createdAt))}
       </Text>
 
@@ -72,17 +72,19 @@ const CardFooter = ({ article }: CardFooterProps) => {
         justify="space-between"
         css={css`
           width: 100%;
-        `}>
+        `}
+      >
         <IconText
           iconValue={{
             Svg: Like,
             fill: theme.SECONDARY,
-            size: 16
+            size: 16,
           }}
           textValue={{
-            children: article.likes.length,
+            // children: article.likes.length,
+            children: 1,
             size: 12,
-            color: theme.TEXT300
+            color: theme.TEXT300,
           }}
           css={css`
             gap: 5px;
@@ -91,9 +93,10 @@ const CardFooter = ({ article }: CardFooterProps) => {
         <IconText
           iconValue={{ Svg: Message, fill: theme.TEXT300, size: 16 }}
           textValue={{
-            children: article.comments.length,
+            // children: article.comments.length,
+            children: 1,
             size: 12,
-            color: theme.TEXT300
+            color: theme.TEXT300,
           }}
           css={css`
             gap: 5px;

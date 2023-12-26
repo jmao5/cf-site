@@ -1,7 +1,7 @@
 export interface Channel {
-  posts: string[];
-  _id: string;
-  name: string;
+  id: string;
+  channelName: string;
+  svg: string;
   description: string;
   createdAt: string;
   updatedAt: string;
